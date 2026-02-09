@@ -16,13 +16,14 @@
 
         <button type="submit" class="btn btn-primary">Adicionar</button>
 
-    <h2>Lista de Tarefas</h2>
+    <h2 class="my-3">Lista de Tarefas</h2>
 
         {% if tarefas %}
 
             <ul>
                 {% for tarefa in tarefas %}
-                    <li>{{ tarefa.titulo_tarefa }} - {{ tarefa.data_conclusao }}</li>
+                    <li>{{ tarefa.titulo_tarefa }} - {{ tarefa.data_conclusao }} <a
+                    href="{{ url_for('delete', idTarefa=tarefa.id_tarefa) }}">Apagar</a> </li>
                 {% endfor %}
             </ul>
 
